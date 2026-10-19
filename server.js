@@ -18,6 +18,10 @@ let todos = [
 ];
 let nextId = 4;
 
+app.get('/health', (req, res) => {
+  res.json({ ok: true, message: 'Express server is running' });
+});
+
 app.get('/todo', (req, res) => {
   res.json(todos);
 });
