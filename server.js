@@ -65,6 +65,10 @@ app.delete('/todo/:id', (req, res) => {
   res.redirect('/');
 });
 
-app.listen(PORT, () => {
-  console.log(`http://localhost:${PORT}`);
-});
+if (require.main === module) {
+  app.listen(PORT, () => {
+    console.log(`http://localhost:${PORT}`);
+  });
+}
+
+module.exports = app;
